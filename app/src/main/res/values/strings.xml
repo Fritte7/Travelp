@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name_preprod">Wanderlust preprod</string>
+    <string name="app_name_release">Wanderlust</string>
+
+    <!-- AccuWeather -->
+    <string name="accuweather_api_key">dvbW4XgfaEklRsBDKDiBK1rmUlCPyq7d</string>
+    <string name="city_key_helsinki">133328</string>
+    <string name="accuweather_host_dev">http://dataservice.accuweather.com/</string>
+
+    <!-- error -->
+    <string name="error_connection">Error connection</string>
+</resources>
