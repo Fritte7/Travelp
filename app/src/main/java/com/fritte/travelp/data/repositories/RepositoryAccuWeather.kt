@@ -30,7 +30,6 @@ class RepositoryAccuWeather(
         CoroutineScope(Dispatchers.IO).launch {
             val response = api.searchCityLoc(_apiKey, getGeocoderToString(_latLng))
             withContext(Dispatchers.Main) {
-                Log.d(RepositoryAccuWeather::class.java.canonicalName, "searchCityLocation( "+response.raw().request().url()+" )")
                 Log.d(RepositoryAccuWeather::class.java.canonicalName, "searchCityLocation( "+response.code()+", "+response.body()+" )")
                 try {
                     if (response.isSuccessful) {
@@ -55,7 +54,6 @@ class RepositoryAccuWeather(
         CoroutineScope(Dispatchers.IO).launch {
             val response = api.getCurrentCondition(_locationKey, _apiKey, false)
             withContext(Dispatchers.Main) {
-                Log.d(RepositoryAccuWeather::class.java.canonicalName, "getCurrentCondition( "+response.raw().request().url()+" )")
                 Log.d(RepositoryAccuWeather::class.java.canonicalName, "getCurrentCondition( "+response.code()+", "+response.body()+" )")
                 try {
                     if (response.isSuccessful) {
@@ -82,7 +80,6 @@ class RepositoryAccuWeather(
                                 api.getFiveDaysForecast(_locationKey, _apiKey, false)
                             }
             withContext(Dispatchers.Main) {
-                Log.d(RepositoryAccuWeather::class.java.canonicalName, "getForecast( "+response.raw().request().url()+" )")
                 Log.d(RepositoryAccuWeather::class.java.canonicalName, "getForecast( "+response.code()+", "+response.body()+" )")
                 try {
                     if (response.isSuccessful) {

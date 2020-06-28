@@ -1,13 +1,11 @@
 package com.fritte.travelp.ui.main
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.fritte.travelp.data.model.place.TravelPlace
 import com.fritte.travelp.data.model.utils.Resource
 import com.fritte.travelp.data.repositories.RepositoryAccuWeather
 import com.fritte.travelp.data.repositories.RepositoryPlace
 import com.google.android.gms.maps.model.LatLng
-import kotlinx.coroutines.launch
 
 class MainViewModel(
     private val repositoryPlace: RepositoryPlace,

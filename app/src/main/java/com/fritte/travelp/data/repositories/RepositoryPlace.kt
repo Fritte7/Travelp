@@ -18,14 +18,8 @@ class RepositoryPlace(
         emit(dao.getPlaces())
     }
 
-    fun insertPlace(place: TravelPlace) : MutableLiveData<Long?> {
-        val a: MutableLiveData<Long?> = MutableLiveData()
-        CoroutineScope(Dispatchers.IO).launch {
-            withContext(Dispatchers.Main) {
-                a.value = dao.insertPlace(place)
-            }
-        }
-        return a
+    fun insertPlace(place: TravelPlace) : LiveData<Long> = liveData {
+        emit(dao.insertPlace(place))
     }
 
     fun updatePlace(place: TravelPlace) {
